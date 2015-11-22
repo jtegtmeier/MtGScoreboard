@@ -1,8 +1,8 @@
 {
-  "name": "angular2-seed",
-  "version": "0.0.0",
-  "description": "Seed for Angular 2 apps",
-  "repository": "https://github.com/mgechev/angular2-seed",
+  "name": "MtGScoreboard",
+  "version": "0.0.1",
+  "description": "Scoreboard for Magic the Gathering",
+  "repository": "https://github.com/jtegtmeier/MtGScoreboard.git",
   "scripts": {
     "build.dev": "gulp build.dev",
     "build.dev.watch": "gulp build.dev.watch",
@@ -21,7 +21,7 @@
     "test": "gulp test",
     "tsd": "tsd"
   },
-  "author": "Minko Gechev <mgechev>",
+  "author": "Jacob Tegtmeier <jtegtmeier>",
   "license": "MIT",
   "devDependencies": {
     "@reactivex/rxjs": "^5.0.0-alpha.6",
