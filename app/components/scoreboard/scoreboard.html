@@ -1,0 +1,19 @@
+<h1>M:tG Scoreboard</h1>
+
+<form (submit)="addPlayer(name, life)">
+  <h2>Add Player</h2> <br>
+  <label>Player Name: </label><input #name> <br>
+  <label>Starting Life: </label><input #life value="20">
+  <button type="submit">Add</button>
+</form>
+<h2>Player List:</h2>
+<ul>
+  <li *ng-for="#player of playerList.get()">
+    {{player.name}} Life: {{player.life}}
+    <button (click)="player.addLife(1)">Life +1</button>
+    <button (click)="player.addLife(5)">Life +5</button>
+    <button (click)="player.removeLife(1)">Life -1</button>
+    <button (click)="player.removeLife(5)">Life -5</button>
+  </li>
+
+</ul>
