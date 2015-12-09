@@ -1,19 +1,38 @@
-<h1>M:tG Scoreboard</h1>
-
-<form (submit)="addPlayer(name, life)">
-  <h2>Add Player</h2> <br>
-  <label>Player Name: </label><input #name> <br>
-  <label>Starting Life: </label><input #life value="20">
-  <button type="submit">Add</button>
-</form>
-<h2>Player List:</h2>
-<ul>
-  <li *ng-for="#player of playerList.get()">
-    {{player.name}} Life: {{player.life}}
-    <button (click)="player.addLife(1)">Life +1</button>
-    <button (click)="player.addLife(5)">Life +5</button>
-    <button (click)="player.removeLife(1)">Life -1</button>
-    <button (click)="player.removeLife(5)">Life -5</button>
-  </li>
-
-</ul>
+<div [hidden]="formHidden" class="col-md-6">
+  <form (submit)="addPlayer(name, life)">
+    <div class="form-group">
+      <h2>Add Player</h2> <br>
+      <label>Player Name</label> <br>
+      <input #name class="form-control"> <br>
+      <label>Starting Life</label> <br>
+      <input #life value="20" class="form-control"> <br>
+      <button class="btn btn-default" type="submit">Add</button>
+    </div>
+  </form>
+</div>
+<button class="btn btn-default" (click)="hideForm()">Hide/Show Form</button>
+<div>
+  <h2>Player List:</h2>
+  <table>
+    <tr>
+      <th>Player</th><th>Life</th><th>Poison</th>
+    </tr>
+    <tr *ng-for="#player of playerList.get()" [ng-style]="{'background-color': player.color}">
+      <td>
+        {{player.name}}
+      </td>
+      <td>
+        {{player.life}}
+        <button class="btn btn-default" (click)="player.addLife(1)">+1</button>
+        <button class="btn btn-default" (click)="player.addLife(5)">+5</button>
+        <button class="btn btn-default" (click)="player.removeLife(1)">-1</button>
+        <button class="btn btn-default" (click)="player.removeLife(5)">-5</button>
+      </td>
+      <td>
+        {{player.poisonCount}}
+        <button class="btn btn-default" (click)="player.addPoisonCount(1)">+1</button>
+        <button class="btn btn-default" (click)="player.removePoisonCount(1)">-1</button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -8,10 +8,10 @@ export class Player {
   color:string;
   poisonCount:number;
 
-  constructor(name, life, color) {
+  constructor(name, life) {
     this.name = name;
     this.life = +life;
-    this.color = color;
+    this.color = '#' + Math.random().toString(16).substring(2, 8);
     this.poisonCount = 0;
   }
 

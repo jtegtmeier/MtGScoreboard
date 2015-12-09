@@ -1,0 +1,13 @@
+table {
+  border-collapse: collapse;
+  display: table;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+td {
+  font-weight: bold;
+}
